@@ -1,11 +1,20 @@
+<!DOCTYPE html>
 <html lang="cs">
-
+<head>
+    <meta charset="UTF-8">
+    <title>Přičti Jednicku</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
+</head>
 <body>
     <h1>Přičti jedničku</h1>
     <from method="post">
-        <lable for"number">Zadej čislo:</lable>
-        <input type="number" name="number"
-
+        <lable for="number">Zadej čislo:</lable>
+        <input type="number" name="number" required>
+        <button type="submit">Odeslat</button>
     </from>
+
+    {% if result is none %}
+        <h2>Výsledek: {{ result }}</h2>
+    {% endif %}
 </body>
 </html>
